@@ -10,8 +10,6 @@ public class Reserva {
     private List<String> asientos;
     private String nombreCliente;
 
-    public Reserva() {
-    }
 
     public Reserva(Long id, Long funcionId,
                    List<String> asientos,

@@ -12,9 +12,7 @@ function App() {
   const [funcionId, setFuncionId] = useState("");
   const [asientos, setAsientos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
-  const [nombre, setNombre] = useState("");
-  const [mensaje, setMensaje] = useState("");
-  const [cargando, setCargando] = useState(false);
+  
 
   useEffect(() => {
     obtenerFunciones()
@@ -90,11 +88,11 @@ function App() {
         <select
           id="funcion"
           value={funcionId}
-          onChange={(e) => setFuncionId(e.target.value)}
+          onChanges={(e) => setFuncionId(e.target.value)}
         >
           {funciones.map((funcion) => (
             <option key={funcion.id} value={funcion.id}>
-              {funcion.pelicula} · {funcion.horario} · $
+              {funcion.pelicula} · {funcion.horarios} · $
               {Number(funcion.precio).toLocaleString("es-CO")}
             </option>
           ))}
@@ -103,7 +101,7 @@ function App() {
         {funcionActual && (
           <div className="detalle">
             <h2>{funcionActual.pelicula}</h2>
-            <p>Función: {funcionActual.horario}</p>
+            <p>Función: {funcionActual.horarios}</p>
             <p>
               Precio por asiento: $
               {Number(funcionActual.precio).toLocaleString("es-CO")}
@@ -119,14 +117,14 @@ function App() {
               key={asiento.codigo}
               type="button"
               disabled={asiento.ocupado}
-              aria-pressed={seleccionados.includes(asiento.codigo)}
+              aria-pressed={seleccionados.includes(asiento.codigos)}
               className={[
                 "asiento",
                 asiento.ocupado ? "ocupado" : "",
-                seleccionados.includes(asiento.codigo) ? "seleccionado" : "",
+                seleccionados.includes(asiento.codigos) ? "seleccionado" : "",
               ].join(" ")}
-              onClick={() => alternarAsiento(asiento.codigo)}
-              aria-label={`Asiento ${asiento.codigo}, ${
+              onClic={() => alternarAsiento(asiento.codigos)}
+              aria-label={`Asiento ${asiento.codigos}, ${
                 asiento.ocupado ? "ocupado" : "disponible"
               }`}
             >
