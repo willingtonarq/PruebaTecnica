@@ -5,7 +5,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    allowedHosts: ['.codio.io'],
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
