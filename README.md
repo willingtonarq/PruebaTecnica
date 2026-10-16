@@ -41,13 +41,12 @@ CineReserve-Examen/
 
 ## 4. Requisitos previos
 
-El entorno de Codio debe disponer de:
+El entorno de sus equipos debe disponer de:
 
-- Java 21.
+- Java 21/17.
 - Maven Wrapper incluido en el proyecto.
 - Node.js 22 o una versión compatible con las dependencias del frontend.
 - npm.
-- Acceso a las terminales y a la vista previa de los puertos de Codio.
 
 **Importante:** el backend y el frontend deben ejecutarse en terminales independientes.
 
@@ -56,8 +55,8 @@ El entorno de Codio debe disponer de:
 Abre una terminal y ejecuta:
 
 ```bash
-cd ~/workspace/cinereserve-api
-./mvnw spring-boot:run
+cd cinereserve-api
+mvnw spring-boot:run
 ```
 
 El backend se ejecutará en el puerto `8080`.
@@ -65,7 +64,7 @@ El backend se ejecutará en el puerto `8080`.
 Para ejecutar las pruebas del backend:
 
 ```bash
-cd ~/workspace/cinereserve-api
+cd cinereserve-api
 ./mvnw test
 ```
 
@@ -80,56 +79,24 @@ BUILD SUCCESS
 Abre una segunda terminal:
 
 ```bash
-cd ~/workspace/cinereserve-web
+cd cinereserve-web
 npm install
-npm run dev -- --host 0.0.0.0
+npm run dev
 ```
 
 Vite se ejecutará en el puerto `5173`.
 
-Abre la vista previa pública de ese puerto desde Codio para utilizar CineReserve.
+Abre la vista previa para utilizar CineReserve.
 
-La configuración de Vite debe conservar el proxy hacia Spring Boot y permitir el dominio de Codio utilizado por la actividad.
+La configuración de Vite debe conservar el proxy hacia Spring Boot y permitir el dominio utilizado por la actividad.
 
-## 7. Configuración de Node.js y npm
 
-Si la terminal no reconoce los comandos `node` o `npm`, puedes instalar NVM y Node.js 22.
-
-### Instalar NVM
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-```
-
-Cargar NVM en la terminal actual:
-
-```bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-```
-
-Instalar y activar Node.js 22:
-
-```bash
-nvm install 22
-nvm use 22
-```
-
-Verificar las versiones:
-
-```bash
-node --version
-npm --version
-```
-
-Si acabas de instalar NVM, abre una terminal nueva o vuelve a cargar el archivo `nvm.sh` cuando sea necesario.
-
-## 8. Instalar Axios y las dependencias de pruebas
+## 7. Instalar Axios y las dependencias de pruebas
 
 Si Axios no está instalado en el frontend:
 
 ```bash
-cd ~/workspace/cinereserve-web
+cd cinereserve-web
 npm install axios
 ```
 
@@ -177,7 +144,7 @@ Las reservas deben respetar las siguientes condiciones:
 
 ## 11. Evaluación automática
 
-La actividad utiliza un evaluador automático de Codio con una calificación máxima de 100 puntos.
+La actividad utiliza un evaluador automático con una calificación máxima de 100 puntos.
 
 | Componente | Puntaje máximo |
 |---|---:|
@@ -187,13 +154,13 @@ La actividad utiliza un evaluador automático de Codio con una calificación má
 
 El evaluador ejecuta las pruebas del backend y las pruebas oficiales de React configuradas para la actividad.
 
-La calificación depende de los resultados obtenidos por cada bloque de evaluación. La ejecución local de las pruebas sirve para verificar el proyecto, pero no sustituye la calificación oficial de Codio.
+La calificación depende de los resultados obtenidos por cada bloque de evaluación. La ejecución local de las pruebas sirve para verificar el proyecto.
 
 ## 12. Recomendaciones para el desarrollo
 
 - Mantén el backend ejecutándose mientras pruebas el frontend.
 - Utiliza las herramientas de desarrollo del navegador para revisar errores de React.
-- Revisa la consola de Codio si una petición a la API falla.
+- Revisa la consola si una petición a la API falla.
 - Comprueba las respuestas HTTP y el contenido JSON.
 - Ejecuta las pruebas después de cada modificación importante.
 - No elimines configuraciones de Vite, dependencias ni archivos del proyecto sin verificar su impacto.
