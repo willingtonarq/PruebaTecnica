@@ -65,7 +65,7 @@ Para ejecutar las pruebas del backend:
 
 ```bash
 cd cinereserve-api
-./mvnw test
+mvnw test
 ```
 
 La ejecución correcta debe finalizar con:
