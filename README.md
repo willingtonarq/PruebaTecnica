@@ -12,7 +12,7 @@ El objetivo del examen es completar, corregir y validar funcionalidades de una a
 
 | Componente | Tecnología |
 |---|---|
-| Backend | Java 17 y Spring Boot |
+| Backend | Java 21/17 y Spring Boot |
 | Gestión de dependencias | Maven Wrapper |
 | API | REST |
 | Frontend | React |
