@@ -17,7 +17,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                     .allowedOrigins(
-                        "https://norwayrent-barbarafrog-5173.codio.io"
+                        "*"
                     )
                     .allowedMethods(
                         "GET", "POST", "PUT", "DELETE", "OPTIONS"
