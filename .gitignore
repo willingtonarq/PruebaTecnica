@@ -1,0 +1,65 @@
+# ==========================================
+# Java / Spring Boot / Maven
+# ==========================================
+**/target/
+**/build/
+**/out/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+
+# Maven
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+**/release.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# VS Code
+.vscode/
+
+# ==========================================
+# React / Node.js / Vite
+# ==========================================
+**/node_modules/
+**/dist/
+**/coverage/
+**/.vite/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/pnpm-debug.log*
+
+# Archivos locales de entorno
+**/.env
+**/.env.*
+!**/.env.example
+
+# ==========================================
+# Sistema operativo
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Temporales y respaldos
+# ==========================================
+*.tmp
+*.bak
+*.swp
+*~
